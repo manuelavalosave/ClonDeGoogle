@@ -29,13 +29,13 @@
         </nav>
     </header> 
     <main>
-        <section class="main-logo">
+        <section class="main-log">
             <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="">
         </section>
         <section class="main-input">
             <div class="main-input-container">
                <span class="search-icon"></span>
-                <input type="text">
+                <input type="text" id="search" onkeypress="return Obtener_Busqueda(event)">
                 <a class="micro-icon" href=""></a>
             </div>
         </section>
@@ -75,7 +75,17 @@
             </li>
         </ul>
     </footer>
-
+<script>
+    function Obtener_Busqueda(e) {
+    if (e.keyCode == 13) {
+        let Buscar = document.getElementById("search").value; 
+        if(Buscar != ''){
+            window.location.href = "https://www.google.com/search?q="+Buscar;
+        }
+        return false;
+    }
+}
+</script>
     
 </body>
 </html>
